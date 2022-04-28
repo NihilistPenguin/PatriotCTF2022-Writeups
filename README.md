@@ -1,2 +1,4 @@
 # PatriotCTF2022-Writeups
-Writeups of my PatriotCTF 2022 challenges
+Writeups for *most* of my PatriotCTF 2022 challenges!
+
+Repo of all the challenges: 
