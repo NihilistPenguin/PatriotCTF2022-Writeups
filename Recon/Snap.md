@@ -11,7 +11,7 @@ Here are the three screenshots:
 <p align="left">
 <img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/first.png" width=33%  height=33%>
 <img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/second.png" width=33%  height=33%>
-<img src=https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/third.png" width=33%  height=33%>
+<img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/third.png" width=33%  height=33%>
 </p>
 
 If you find those places on google maps and look around for a bit, you should notice that each one has some sort of weigh station or truck scale. We can also see that the person is traveling south on I-25. Searching south of the last stop in Pueblo for truck weigh stations, the next one is `Weigh Station: Trinidad`.
