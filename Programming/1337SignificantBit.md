@@ -15,12 +15,12 @@ note: the width, height, and # of channels are also encoded with 1337 LSB
 There's really nothing to figure out, just a matter of writing up the script to do it.
 
 Here's the encoded image: 
-<p align="center"><img src="encoded.png" width=60%  height=60%></p>
+<p align="center"><img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/1337_encoded.png" width=60%  height=60%></p>
 
 You can see all the changed bits at the top 4th of the image.
 
 Here's the data structure:
-<p align="center"><img src="data_structure.jpg" width=50%  height=50%></p>
+<p align="center"><img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/data_structure.jpg" width=50%  height=50%></p>
 
 So the image width is in the first 16 bytes, image height in the following 16, and then the # of channels in the following 2. Now we know our image size and can read the proper number of bits of encoded data.
 
