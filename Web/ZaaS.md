@@ -1,26 +1,9 @@
 # ZaaS
 
-p.s. For testing, go to [INSTALL.md](https://github.com/MasonCompetitiveCyber/PatriotCTF-2022/blob/main/Web/ZaaS/INSTALL.md)
-
 ### Description
 I am in the process of making the next big social media platform but I have a history of implementing software insecurely. If you can get view the admin.html page, I will give you a flag. 
 
 Due to market research, I think I found an opportunity. Nobody seems to know how to unzip files, so I made (un)Zip as a Service! I have learned from my mistakes, so I will be giving you the source code for the unzipping functionality (app/routes/upload.py) as well debug mode on so you can tell me how to fix my inevitably vulnerable code!
-
-### Difficulty
-6/10?
-
-### Flag
-`PCTF{y0u_s1ipp3ry_1itt13_bugg3r}`
-
-### Hints
-1. zip slip
-
-### Author
-Daniel Getter (NihilistPenguin)
-
-### Tester
-None yet
 
 ### Writeup
 
@@ -162,7 +145,7 @@ r = requests.post(url=SERVER_ADDR + "/upload", files={"file": ('test.zip', fh.ge
 The first part gets us our session cookie so we can make requests (make sure to make a user first). Skip the payload for now. The final block of code will create a zipfile in memory (you can probably do it a different way, but this is nice and clean) with a file inside the zip with a filename of `../../routes/upload.py`. The contents of the file is defined in that huge payload string. This is literally just the upload.py file given in the challenge with a few changes marked with comments. Basically, we just want the `/upload` page to render the admin.html page when we GET request it.
 
 Finally, we just post our request. Let's see what happens when we run it and go to the `/upload` page.
-<p align="center"><img src="https://github.com/MasonCompetitiveCyber/PatriotCTF-2022/raw/main/writeup-images/zipslip_flag.png" width=70%  height=70%></p>
+<p align="center"><img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/zipslip_flag.png" width=70%  height=70%></p>
 
 
 This can be solved other ways. Instead of overwriting the `upload.py` file, you can overwrite any `.py` want and use the same `render_template_string`. Also, instead of opening the `admin.html` file and rendering it, you can just do normal flask SSTI command execution and get a reverse shell or do the `{{config}}` thing from the `Not So Secret` challenge. You can also overwrite an html template file to just have a `{{}}` template inside instead of going the `render_template_string` route.

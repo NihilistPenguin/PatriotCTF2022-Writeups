@@ -1,27 +1,9 @@
 # TaaS
 
-p.s. For testing, go to [INSTALL.md](https://github.com/MasonCompetitiveCyber/PatriotCTF-2022/blob/main/Web/TaaS/INSTALL.md)
-
 ### Description
 I am in the process of making the next big social media platform but I have a history of implementing software insecurely. If you can get view the admin.html page, I will give you a flag. 
 
 While I work on fixing the vulnerable unzipping code, I think I found another market opportunity. Nobody seems to know how to untar files, so I made (un)Tar as a Service! I have learned from my mistakes, so I will be giving you the source code for the untar functionality (app/routes/upload.py) so you can tell me how to fix my inevitably vulnerable code!
-
-### Difficulty
-8/10?
-
-### Flag
-`PCTF{r4c3c4r?_m0r3_1ik3_r4c3_t4r}`
-
-### Hints
-1. Tar symlink vulnerability
-2. Race condition
-
-### Author
-Daniel Getter (NihilistPenguin)
-
-### Tester
-None yet
 
 ### Writeup
 
@@ -151,10 +133,10 @@ Basically, we are making infinite requests to where the `link.file` will be uplo
 
 Here is a gif of how I ran the two python scripts. I'm also running the web app normally and not through docker so you can see all the requests come in.
 
-<p align="center"><img src="https://github.com/MasonCompetitiveCyber/PatriotCTF-2022/raw/main/writeup-images/TaaS_solve.gif" width=100%  height=100%></p>
+<p align="center"><img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/TaaS_solve.gif" width=100%  height=100%></p>
 
 The following image shows the tar decompression time difference between the `link` file and the `big` file:
-<p align="center"><img src="https://github.com/MasonCompetitiveCyber/PatriotCTF-2022/raw/main/writeup-images/tar_decompression.png" width=50%  height=50%></p>
+<p align="center"><img src="https://github.com/NihilistPenguin/PatriotCTF2022-Writeups/raw/main/writeup-images/tar_decompression.png" width=50%  height=50%></p>
 
 You can see the `large.txt` file takes a whole 0.3 seconds to decompress, giving us plenty of time for the race condition. The bigger the file, the more time you have.  
 
